@@ -1,5 +1,7 @@
 const express = require("express");
 const { default: mongoose } = require("mongoose");
+const cookieParser = require("cookie-parser");
+const authRouter = require("./routes/auth/auth-routes");
 const app = express();
 const port = 5000;
 
@@ -9,6 +11,10 @@ mongoose
   )
   .then(() => console.log("connected"))
   .catch((error) => console.log(error));
+
+app.use(cookieParser());
+app.use(express.json());
+app.use("/api/auth", authRouter);
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
