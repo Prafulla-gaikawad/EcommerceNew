@@ -4,6 +4,9 @@ const cookieParser = require("cookie-parser");
 const authRouter = require("./routes/auth/auth-routes");
 const commonFeatureRouter = require("./routes/common/feature-routes");
 const adminProductsRouter = require("./routes/admin/products-routes");
+const adminOrderRouter = require("./routes/admin/order-routes");
+
+const shopOrderRouter = require("./routes/shop/order-routes");
 const app = express();
 const port = 5000;
 
@@ -19,6 +22,8 @@ app.use(express.json());
 app.use("/api/auth", authRouter);
 app.use("/api/common/feature", commonFeatureRouter);
 app.use("/api/admin/products", adminProductsRouter);
+app.use("/api/admin/orders", adminOrderRouter);
+app.use("/api/shop/order", shopOrderRouter);
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
