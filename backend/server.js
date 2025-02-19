@@ -24,8 +24,8 @@ app.use("/api/auth", authRouter);
 app.use("/api/common/feature", commonFeatureRouter);
 app.use("/api/admin/products", adminProductsRouter);
 app.use("/api/admin/orders", adminOrderRouter);
-app.use("/api/shop/order", shopOrderRouter);
 
+app.use("/api/shop/order", shopOrderRouter);
 app.use("/api/shop/cart", shopCartRouter);
 app.get("/", (req, res) => {
   res.send("Hello World!");
