@@ -11,6 +11,7 @@ const shopCartRouter = require("./routes/shop/cart-routes");
 const shopProductsRouter = require("./routes/shop/products-routes");
 const shopAddressRouter = require("./routes/shop/address-routes");
 const shopReviewRouter = require("./routes/shop/review-routes");
+const shopSearchRouter = require("./routes/shop/search-routes");
 
 const app = express();
 const port = 5000;
@@ -34,6 +35,7 @@ app.use("/api/shop/cart", shopCartRouter);
 app.use("/api/shop/products", shopProductsRouter);
 app.use("/api/shop/address", shopAddressRouter);
 app.use("/api/shop/review", shopReviewRouter);
+app.use("/api/shop/search", shopSearchRouter);
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
