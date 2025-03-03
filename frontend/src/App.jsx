@@ -19,9 +19,19 @@ function App() {
 
   console.log(isLoading, user);
   return (
-    <>
-      <h1>hello world</h1>
-    </>
+    <div className="flex flex-col overflow-hidden bg-white">
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <CheckAuth
+              isAuthenticated={isAuthenticated}
+              user={user}
+            ></CheckAuth>
+          }
+        />
+      </Routes>
+    </div>
   );
 }
 
