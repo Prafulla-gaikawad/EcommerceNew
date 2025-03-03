@@ -36,6 +36,7 @@ function App() {
   if (isLoading) return <Skeleton className="w-[800] bg-black h-[600px]" />;
 
   console.log(isLoading, user);
+
   return (
     <div className="flex flex-col overflow-hidden bg-white">
       <Routes>
@@ -48,7 +49,6 @@ function App() {
             ></CheckAuth>
           }
         />
-
         <Route
           path="/auth"
           element={
@@ -60,7 +60,6 @@ function App() {
           <Route path="login" element={<AuthLogin />} />
           <Route path="register" element={<AuthRegister />} />
         </Route>
-
         <Route
           path="/admin"
           element={
